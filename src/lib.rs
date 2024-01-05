@@ -663,6 +663,9 @@ mod macros;
 /// Baseline OpenID Connect implementation and types.
 pub mod core;
 
+/// FIXME: documentation
+pub mod jwt_profile;
+
 /// OpenID Connect Dynamic Client Registration.
 pub mod registration;
 
@@ -1422,7 +1425,7 @@ where
             AuthenticationFlow::Implicit(include_token) => {
                 if include_token {
                     OAuth2ResponseType::new(
-                        vec![
+                        [
                             core::CoreResponseType::IdToken,
                             core::CoreResponseType::Token,
                         ]
